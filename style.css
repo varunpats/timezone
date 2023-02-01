@@ -1,0 +1,77 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Inter;
+    color: #000;
+}
+
+.primaryDiv {
+    padding: 50px;
+}
+
+h1 {
+    margin: 15px 0;
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.innderDiv {
+    padding: 25px 25px 70px;
+    border: 2px solid #000;
+    font-size: 28px;
+}
+
+p {
+    font-weight: 400;
+    margin: 0 0 18px 0;
+}
+
+.flexDiv {
+    display: flex;
+}
+
+.flexDiv>p {
+    width: 50%;
+}
+
+.secondaryDiv {
+    padding: 50px;
+    background-color: #1E1E1E;
+    color: #fff;
+}
+
+#address {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #fff;
+    color: #fff;
+    background-color: #1E1E1E;
+    margin-bottom: 20px;
+}
+
+#submit {
+    padding: 10px 45px;
+    background-color: #fff;
+    color: #000;
+}
+
+#error,
+#timezoneError {
+    margin-top: 10px;
+    color: #E84444;
+    display: none;
+}
+
+#result {
+    margin-top: 60px;
+}
+
+#resultDiv {
+    color: #fff;
+    border: 2px solid #fff;
+    margin-top: 40px;
+}
+
+#finalDiv {
+    display: none;
+}

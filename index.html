@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./app.js" defer></script>
+    <title>Timezone</title>
+</head>
+
+<body>
+    <div class="primaryDiv">
+        <h1>TimeZone API</h1>
+        <h1>Your Current Time Zone</h1>
+        <div class="innderDiv" id="timezone"></div>
+    </div>
+    <div class="secondaryDiv">
+        <h1>Enter Address</h1>
+        <input type="text" id="address" placeholder="Address">
+        <button id="submit">Submit</button>
+        <p id="error">Please enter an address!</p>
+        <p id="timezoneError">Time zone could not be found.</p>
+        <div id="finalDiv">
+            <h1 id="result">Your Result</h1>
+            <div class="innderDiv" id="resultDiv"></div>
+        </div>
+    </div>
+</body>
+
+</html>
