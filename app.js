@@ -37,26 +37,24 @@ async function showPosition(position) {
 async function showResult() {
     if (address.value.trim() == "") {
         timezoneError.style.display = "none";
+        finalDiv.style.display = "none";
         error.style.display = "block";
         return;
     }
-    const url = `http://api.openweathermap.org/geo/1.0/direct?q=${address.value}&appid=b03c095174f023baf565602eeecf6c08`;
-    const res = await fetch(url);
-    const info = await res.json();
-    console.log(info);
-    if (info.length == 0) {
+    const link = `https://api.geoapify.com/v1/geocode/search?text=${address.value}&format=json&apiKey=f6b7f680c3d347acb392c52fd0179873`
+    const response = await fetch(link);
+    const data = await response.json();
+    if (data.length == 0) {
         error.style.display = "none";
+        finalDiv.style.display = "none";
         timezoneError.style.display = "block";
         return;
     }
-    const link = `https://api.geoapify.com/v1/geocode/reverse?lat=${info[0].lat}&lon=${info[0].lon}&format=json&apiKey=f6b7f680c3d347acb392c52fd0179873`;
-    const response = await fetch(link);
-    const data = await response.json();
     resultDiv.innerHTML = `
     <p>Name of Time Zone: ${data.results[0].timezone.name}</p>
     <div class="flexDiv">
-        <p>Lat: ${info[0].lat}</p>
-        <p>Long: ${info[0].lon}</p>
+        <p>Lat: ${data.lat}</p>
+        <p>Long: ${data.lon}</p>
     </div>
     <p>Offset STD: ${data.results[0].timezone.offset_STD}</p>
     <p>Offset STD Seconds: ${data.results[0].timezone.offset_STD_seconds}</p>
